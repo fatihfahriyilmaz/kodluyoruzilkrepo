@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evrak Takip Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Evrak Takip Sistemi</h1>
+
+        <!-- Sağ Üste İsim Değiştir Butonu -->
+        <div style="position: absolute; top: 10px; right: 10px;">
+            <button onclick="openModal()">İsim Değiştir</button>
+        </div>
+
+        <!-- İsim Değiştir Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>İsim ve Birim Değiştir</h2>
+                <form id="isimBirimDegistirForm">
+                    <input type="text" id="yeniIsim" placeholder="Yeni İsim" required>
+                    <input type="text" id="yeniBirim" placeholder="Yeni Birim" required>
+                    <button type="submit">Güncelle</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Geriye kalan içerikler -->
+        <!-- Tab Navigation -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'gidenEvrak')" id="defaultTab">Giden Evrak</button>
+            <button class="tablinks" onclick="openTab(event, 'gelenEvrak')">Gelen Evrak</button>
+        </div>
+
+        <!-- Giden Evrak Form and Table -->
+        <div id="gidenEvrak" class="tabcontent">
+            <h2>Giden Evrak Ekle</h2>
+            <form id="gidenEvrakForm">
+                <input type="text" id="gidenEvrakNo" placeholder="Evrak No" required>
+                <input type="text" id="gidenEvrakTipi" placeholder="Evrak Tipi" required>
+                <button type="submit">Ekle</button>
+            </form>
+            <table id="gidenEvrakTablosu">
+                <thead>
+                    <tr>
+                        <th>Evrak No</th>
+                        <th>Evrak Tipi</th>
+                        <th>Ekleyen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Giden Evraklar buraya eklenecek -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Gelen Evrak Form and Table -->
+        <div id="gelenEvrak" class="tabcontent">
+            <h2>Gelen Evrak Ekle</h2>
+            <form id="gelenEvrakForm">
+                <input type="text" id="gelenEvrakNo" placeholder="Evrak No" required>
+                <input type="text" id="gelenEvrakTipi" placeholder="Evrak Tipi" required>
+                <button type="submit">Ekle</button>
+            </form>
+            <table id="gelenEvrakTablosu">
+                <thead>
+                    <tr>
+                        <th>Evrak No</th>
+                        <th>Evrak Tipi</th>
+                        <th>Ekleyen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Gelen Evraklar buraya eklenecek -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
